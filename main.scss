@@ -1,0 +1,922 @@
+//*************************************
+//*                Reset              *
+//*************************************
+*
+{
+box-sizing: border-box;
+}
+html
+{
+font-size: 62.5%; //(10/16)*100
+}
+body
+{
+font-size: 1.6rem;
+// background: rgb(246, 251, 253);
+background: white;
+margin: 0;
+
+}
+.btn
+{
+border-radius: .6rem;
+width: 100%;
+margin-top: 2rem;
+font-size: 1.8rem;
+padding: 1.3rem 2.1rem;
+font-weight: bold;
+text-decoration: none;
+color: rgb(255, 255, 255);
+border: 0;
+cursor: pointer;
+}
+
+//*************************************
+//*                Alert              *
+//*************************************
+.alert
+{
+    // pointer-events: all;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    &__content
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        position: relative;
+        width: 90%;
+        
+        font-size: 1.8rem;
+        cursor: pointer;
+        padding: 1rem;
+        border-radius: 0 0 5px 5px;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px;
+        max-width: 80%;
+        margin: 0 auto 0.809rem;
+        color: rgb(255, 255, 255);
+        background-color: rgba(255, 110, 112, 0.98);
+        align-items: flex-start;
+        transition: background-color .3s ease-out;
+        opacity: 1;
+        + .alert__content
+        {
+            border-radius: 5px;
+        }   
+    }
+    &__info
+    {
+        color: white;
+        align-self: flex-start;
+        width: 90%;
+    }
+    &__close
+    {
+        width: 10%;
+        color: white;
+        font-size: 1.8rem;
+        align-self: flex-end;
+    }
+}
+.alert-modal
+{
+background-color: red;
+position: absolute;
+top: 0;
+left: 0;
+margin: 0;
+padding: 0;
+width: 100%;
+// width: 100%;
+// height: 100%;
+// display: none;
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+box-sizing: border-box;
+z-index: 1000;
+
+transition: all 1s ease-in-out,display 1s ease-in-out;
+}
+//*************************************
+//*                Modal              *
+//*************************************
+.modal
+{
+    background-color: rgba(50, 50, 50, .8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    // display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 1000;
+
+    transition: all 1s ease-in-out,display 1s ease-in-out;
+
+    &__dialog
+    {
+        box-sizing: border-box;
+        background-color: white;
+        width: 60rem;
+        border: rgba(50, 50, 50, 0.7) .1rem solid ;
+        box-shadow: .5rem 1rem  rgba(50, 50, 50, .1);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3%;
+    }
+    &__heading
+    {
+        // text-align: left;
+        color: #333;
+        font-weight: 900;
+        border-bottom: rgba(50, 50, 50, 0.5) .1rem solid ;
+        padding-bottom: 2rem;
+        width: 100%;
+        text-align: center;
+    }
+    &__content
+    {
+        color: #333;
+        font-weight: 700;
+        border-bottom: rgba(50, 50, 50, 0.5) .1rem solid ;
+        padding-bottom: 2rem;
+        width: 100%;
+        text-align: center;
+    }
+    &__buttons
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+
+    }
+    &__btn
+    {
+        text-align: center;
+        width: 25%;
+        color: blueviolet;
+        border-radius: .5rem;
+        font-weight: 900;
+        padding: 1rem;
+        margin-right: 2rem;
+        cursor: pointer;
+    }
+    &__close-btn
+    {
+        color: white;
+        background-color: rgb(233, 10, 103);
+        text-align: center;
+    }
+    &__save-btn
+    {
+        color: white;
+        background-color: rgb(0, 105, 217);
+        text-align: center;
+    }
+}
+//*************************************
+//*                Login              *
+//*************************************
+.login
+{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100%;
+margin-top: 3.236rem;
+margin-bottom: 2.1034rem;
+// background-color: red;
+font-family: Lato, "Helvetica Neue", sans-serif;
+&__logo
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: .5rem;
+    width: 100%;
+}
+&__logo-img
+{
+    width: 7rem;
+}
+&__title
+{
+    width: 100%;
+    margin: 0 0 1.5rem;
+    text-align: center;
+    color: rgb(34, 96, 108);
+    font-size: 4rem;
+    font-weight: bold;
+}
+&__sub-title
+{
+    width: 100%;
+    text-align: center;
+    color: rgb(102, 142, 167);
+    font-size: 1.7rem;
+    font-weight: normal;
+    margin: 0 0 1.8rem;
+}
+&__box
+{
+    max-width: 40rem;
+    width: 90%;
+    margin: 0 auto;
+
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(114, 182, 234, 0.2) .1rem 0 3rem;
+    border-radius: .8rem;
+    padding: 3.3rem 2.5rem;
+}
+&__text-field
+{
+    display: flex;
+    border: .1rem solid rgb(202, 234, 246);
+    padding: .5rem;
+    border-radius: .7rem;
+    position: relative;
+    +.login__text-field
+    {
+        margin-top: 4rem;
+    }
+}
+&__field-label
+{
+    text-transform: capitalize;
+    color: rgba(39, 95, 106, 0.85);
+    background-color: rgb(255, 255, 255);
+    padding: 0 .8rem;
+    font-size: 1.5rem;    
+    font-weight: bold;
+    position: absolute;
+    top: -.9rem;
+    left: calc(0.75rem - .2rem);
+}
+&__field-input
+{
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 1.5rem;
+    padding-right: .5rem;
+    color: rgba(32, 78, 87, 0.9);
+    height: auto;
+    border: 0;
+    box-shadow: none;
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    border-radius: .7rem;
+    outline: 0;
+}
+
+&__sign-btn
+{
+    background-color: rgb(30, 218, 124);
+    &:hover
+    {
+        background-color: rgb(34, 179, 106);
+    }
+}
+&__signup
+{
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    color: rgb(13, 153, 223);
+    text-decoration: none;
+    cursor: pointer;
+    &:hover
+    {
+        text-decoration: underline;
+    }
+}
+}
+//*************************************
+//*                Sign Up              *
+//*************************************
+.signup
+{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100%;
+margin-top: 3.236rem;
+margin-bottom: 2.1034rem;
+// background-color: red;
+font-family: Lato, "Helvetica Neue", sans-serif;
+&__logo
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: .5rem;
+    width: 100%;
+}
+&__logo-img
+{
+    width: 7rem;
+}
+&__title
+{
+    width: 100%;
+    margin: 0 0 1.5rem;
+    text-align: center;
+    color: rgb(34, 96, 108);
+    font-size: 4rem;
+    font-weight: bold;
+}
+&__sub-title
+{
+    width: 100%;
+    text-align: center;
+    color: rgb(102, 142, 167);
+    font-size: 1.7rem;
+    font-weight: normal;
+    margin: 0 0 1.8rem;
+}
+&__box
+{
+    max-width: 40rem;
+    width: 90%;
+    margin: 0 auto;
+
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(114, 182, 234, 0.2) .1rem 0 3rem;
+    border-radius: .8rem;
+    padding: 3.3rem 2.5rem;
+}
+&__text-field
+{
+    display: flex;
+    border: .1rem solid rgb(202, 234, 246);
+    padding: .5rem;
+    border-radius: .7rem;
+    position: relative;
+    +.signup__text-field
+    {
+        margin-top: 4rem;
+    }
+}
+&__field-label
+{
+    text-transform: capitalize;
+    color: rgba(39, 95, 106, 0.85);
+    background-color: rgb(255, 255, 255);
+    padding: 0 .8rem;
+    font-size: 1.5rem;    
+    font-weight: bold;
+    position: absolute;
+    top: -.9rem;
+    left: calc(0.75rem - .2rem);
+}
+&__field-input
+{
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 1rem;
+    padding-right: .5rem;
+    color: rgba(32, 78, 87, 0.9);
+    height: auto;
+    border: 0;
+    box-shadow: none;
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    border-radius: .7rem;
+    outline: 0;
+}
+
+&__sign-btn
+{
+    background-color: rgb(30, 218, 124);
+    
+    &:hover
+    {
+        background-color: rgb(34, 179, 106);
+    }
+}
+&__login
+{
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    color: rgb(13, 153, 223);
+    text-decoration: none;
+    cursor: pointer;
+    &:hover
+    {
+        text-decoration: underline;
+    }
+}
+}
+
+//*************************************
+//*           start exam              *
+//*************************************
+.start-exam
+{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100%;
+padding: 0;
+&__header
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(66, 139, 202);
+    height: 6rem;
+    margin: 0 0 2rem;
+    padding: 0 5rem;    
+    border-bottom: .1rem  rgb(0, 0, 255) solid ;
+}
+&__header-title
+{
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    margin-left: 2rem;
+}
+&__header-logo
+{
+    color: white;
+    font-size: 3rem;
+}
+&__details
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 2rem;
+    width: 80%;
+    border: .2rem rgb(221, 221, 221) solid;
+    border-radius: .5rem;
+    margin-top: 2rem;
+    position: relative;
+    
+}
+&__details-title
+{
+    margin: 0;
+    padding: 0;
+    color: rgb(85, 85, 85);
+    text-transform: uppercase;
+    position: absolute;
+    top: -1.3rem;
+    left: 2rem;
+    background-color: white;
+    font-size: 1.9rem;
+}
+&__details-data
+{
+    text-transform: capitalize;
+    margin:1rem 0;
+}
+&__start-btn
+{
+    width: 20rem;
+    background-color: rgb(87, 190, 87);
+    border-color: rgb(57, 132, 57);
+    font-size: 1.5rem;
+    font-weight: 400;
+    &:hover
+    {
+        background-color: rgb(71, 164, 71);
+    }
+}
+&__footer
+{
+    font-size:2rem;
+    color: rgb(88, 88, 88); 
+}
+}
+
+
+//*************************************
+//*          exam page           *
+//*************************************
+.exam-page
+{ 
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100%;
+padding: 0;
+&__header
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(66, 139, 202);
+    height: 6rem;
+    margin: 0 0 2rem;
+    padding: 0 5rem;    
+    border-bottom: .1rem  rgb(0, 0, 255) solid ;
+}
+
+&__header-title
+{
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    margin-left: 2rem;
+}
+&__header-logo
+{
+    color: white;
+    font-size: 3rem;
+}    
+&__panels
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 0rem 5rem;
+    width: 100%;
+}
+&__left-panel
+{
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    // justify-content: center;
+    // align-items: center;
+    width: 70%;
+}
+&__details
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 2rem;
+    width: 100%;
+    border: .2rem rgb(221, 221, 221) solid;
+    border-radius: .5rem;
+    margin-top: 2rem;
+    position: relative;
+    
+}
+&__details-title
+{
+    margin: 0;
+    padding: 0;
+    color: rgb(85, 85, 85);
+    text-transform: uppercase;
+    position: absolute;
+    top: -1.3rem;
+    left: 2rem;
+    background-color: white;
+    font-size: 1.9rem;
+}
+&__ques-header
+{
+    color: rgb(66, 139, 202);
+    background-color: rgb(245, 245, 245);
+    padding: 0 1.5rem;
+    font-size: 2rem;
+
+    
+    border-color: rgb(221, 221, 221);
+    border: .1rem solid rgb(221, 221, 221);
+    border-top-left-radius: .4rem;
+    border-top-right-radius: .4rem;
+    box-shadow: 0 .1rem .1rem rgba(0,0,0,.05);
+}
+&__ques-body
+{
+    padding: 1.5rem;
+    
+    border: .1rem solid rgb(221, 221, 221);
+    // border-bottom-left-radius: .4rem;
+    // border-bottom-right-radius: .4rem;
+    box-shadow: 0 .1rem .1rem rgba(0,0,0,.05);
+}
+&__ques-text
+{
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 1.2rem;
+    margin-bottom: 2.5rem;
+    background: rgb(249, 249, 249);
+    box-shadow: none;
+    border-color: rgb(241, 241, 241);
+    border: 0rem;
+    box-shadow: 0rem 0rem .5rem rgba(0,0,0,.2);
+    color: rgb(51, 51, 51);
+}
+&__ques-answers
+{
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+&__ques-answer
+{
+    padding: 0;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    color: rgb(51, 51, 51);
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+&__ques-footer
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+
+    padding: 1rem 0;
+    background-color: rgb(245, 245, 245);
+    
+    border-color: rgb(221, 221, 221);
+    border: .1rem solid rgb(221, 221, 221);
+    border-bottom-left-radius: .4rem;
+    border-bottom-right-radius: .4rem;
+    box-shadow: 0 .1rem .1rem rgba(0,0,0,.05);
+}
+&__ques-footer-left
+{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    width: 50%;
+    margin-left: 0;
+}
+&__ques-footer-right
+{
+    width: 50%;
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+&__ques-nav-btn
+{
+    width: 50%;
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    font-weight: bold;
+    &#previous-btn
+    {
+        margin-right:0; 
+        background-color: rgb(145, 211, 230);
+        border-color: rgb(14, 94, 119);
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        &:hover
+        {
+            background-color: rgb(57, 179, 215);
+        }
+    }
+    &#skip-next-btn
+    {
+        width: 40%;
+        margin-left:0; 
+        background-color: rgb(226, 103, 99);
+        border-color: rgb(185, 35, 30);
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        &:hover
+        {
+            background-color: rgb(210, 50, 45);
+        }
+    }
+    &#save-next-btn
+    {
+        margin-left:0; 
+        background-color: rgb(112, 212, 112);
+        border-color: rgb(57, 132, 57);
+        &:hover
+        {
+            background-color: rgb(71, 164, 71);
+        }
+    }
+}
+
+&__right-panel
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    // justify-content: center;
+    // align-items: center;
+    width: 30%;
+    height: auto;
+    padding: 2rem;
+}
+&__student-info
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    border: .2rem solid rgb(221, 221, 221);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    background-color: rgb(240, 255, 255);
+}
+&__user-logo 
+{
+    width: 50%;
+    font-size: 6rem;
+    color: rgb(204, 204, 204);
+}
+&__student-info-data
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+&__timer-title
+{
+    margin: 0;
+}
+&__exam-timer
+{
+    margin: 0;
+}
+&__username
+{
+    font-size: 2rem;
+    font-weight: normal;
+}
+&__question-panel
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    border: .2rem solid rgb(221, 221, 221);
+    border-radius: .5rem;
+    background-color: rgb(255, 250, 240);
+    margin-top: 1rem;
+}
+&__question-panel-title
+{  
+    font-weight: bold;
+}
+&__question-panel-items
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+&__question-panel-item
+{
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    background: rgb(238, 238, 238);
+    border-radius: 100%;
+    text-decoration: none;
+    margin: .9rem;
+    border: .1rem solid rgb(185, 167, 167);
+    outline: 0;
+
+}
+&__panel-current-ques
+{
+    border: .2rem solid blue;
+}
+&__panel-visited-ques
+{
+    background-color: rgb(237, 20, 61);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+&__panel-answered-ques
+{
+    background-color: rgb(34, 139, 34);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+&__question-panel-keys
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    border: .2rem solid rgb(221, 221, 221);
+    border-radius: .5rem;
+    background-color: rgb(255, 250, 240);
+    margin-top: 1rem;
+
+}
+&__question-key
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 1rem;
+    & p
+    {
+        margin: 0 1rem;
+    }
+}
+&__visited-key
+{
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    background-color: rgb(237, 20, 61);
+    border-radius: .5rem;
+    border: .1rem solid rgb(185, 167, 167);
+}
+&__answered-key
+{
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    background-color: rgb(34, 139, 34);
+    border-radius: .5rem;
+    border: .1rem solid rgb(185, 167, 167);
+}
+&__not-answered-key
+{
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    background-color: rgb(238, 238, 238);
+    border-radius: 5px;
+    border: .1rem solid rgb(185, 167, 167);
+}
+&__current-key
+{
+    
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    background-color: rgb(238, 238, 238);
+    border-radius: 5px;
+    border: .2rem solid blue;
+}
+}

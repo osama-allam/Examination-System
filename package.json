@@ -1,0 +1,14 @@
+{
+  "name": "examination_system",
+  "version": "1.0.0",
+  "description": "Javascript final project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node-sass main.scss Styles/style.css -w"
+  },
+  "author": "Osama Shawky",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
+}

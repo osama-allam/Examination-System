@@ -1,0 +1,663 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.6rem;
+  background: white;
+  margin: 0; }
+
+.btn {
+  border-radius: .6rem;
+  width: 100%;
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  padding: 1.3rem 2.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  border: 0;
+  cursor: pointer; }
+
+.alert {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%; }
+  .alert__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+    width: 90%;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 0 0 5px 5px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px;
+    max-width: 80%;
+    margin: 0 auto 0.809rem;
+    color: white;
+    background-color: rgba(255, 110, 112, 0.98);
+    align-items: flex-start;
+    transition: background-color .3s ease-out;
+    opacity: 1; }
+    .alert__content + .alert__content {
+      border-radius: 5px; }
+  .alert__info {
+    color: white;
+    align-self: flex-start;
+    width: 90%; }
+  .alert__close {
+    width: 10%;
+    color: white;
+    font-size: 1.8rem;
+    align-self: flex-end; }
+
+.alert-modal {
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: all 1s ease-in-out,display 1s ease-in-out; }
+
+.modal {
+  background-color: rgba(50, 50, 50, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: all 1s ease-in-out,display 1s ease-in-out; }
+  .modal__dialog {
+    box-sizing: border-box;
+    background-color: white;
+    width: 60rem;
+    border: rgba(50, 50, 50, 0.7) 0.1rem solid;
+    box-shadow: 0.5rem 1rem rgba(50, 50, 50, 0.1);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3%; }
+  .modal__heading {
+    color: #333;
+    font-weight: 900;
+    border-bottom: rgba(50, 50, 50, 0.5) 0.1rem solid;
+    padding-bottom: 2rem;
+    width: 100%;
+    text-align: center; }
+  .modal__content {
+    color: #333;
+    font-weight: 700;
+    border-bottom: rgba(50, 50, 50, 0.5) 0.1rem solid;
+    padding-bottom: 2rem;
+    width: 100%;
+    text-align: center; }
+  .modal__buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 5rem;
+    margin-bottom: 2rem; }
+  .modal__btn {
+    text-align: center;
+    width: 25%;
+    color: blueviolet;
+    border-radius: .5rem;
+    font-weight: 900;
+    padding: 1rem;
+    margin-right: 2rem;
+    cursor: pointer; }
+  .modal__close-btn {
+    color: white;
+    background-color: #e90a67;
+    text-align: center; }
+  .modal__save-btn {
+    color: white;
+    background-color: #0069d9;
+    text-align: center; }
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 3.236rem;
+  margin-bottom: 2.1034rem;
+  font-family: Lato, "Helvetica Neue", sans-serif; }
+  .login__logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: .5rem;
+    width: 100%; }
+  .login__logo-img {
+    width: 7rem; }
+  .login__title {
+    width: 100%;
+    margin: 0 0 1.5rem;
+    text-align: center;
+    color: #22606c;
+    font-size: 4rem;
+    font-weight: bold; }
+  .login__sub-title {
+    width: 100%;
+    text-align: center;
+    color: #668ea7;
+    font-size: 1.7rem;
+    font-weight: normal;
+    margin: 0 0 1.8rem; }
+  .login__box {
+    max-width: 40rem;
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: rgba(114, 182, 234, 0.2) 0.1rem 0 3rem;
+    border-radius: .8rem;
+    padding: 3.3rem 2.5rem; }
+  .login__text-field {
+    display: flex;
+    border: 0.1rem solid #caeaf6;
+    padding: .5rem;
+    border-radius: .7rem;
+    position: relative; }
+    .login__text-field + .login__text-field {
+      margin-top: 4rem; }
+  .login__field-label {
+    text-transform: capitalize;
+    color: rgba(39, 95, 106, 0.85);
+    background-color: white;
+    padding: 0 .8rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    top: -.9rem;
+    left: calc(0.75rem - .2rem); }
+  .login__field-input {
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 1.5rem;
+    padding-right: .5rem;
+    color: rgba(32, 78, 87, 0.9);
+    height: auto;
+    border: 0;
+    box-shadow: none;
+    background-color: white;
+    margin: 0;
+    border-radius: .7rem;
+    outline: 0; }
+  .login__sign-btn {
+    background-color: #1eda7c; }
+    .login__sign-btn:hover {
+      background-color: #22b36a; }
+  .login__signup {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    color: #0d99df;
+    text-decoration: none;
+    cursor: pointer; }
+    .login__signup:hover {
+      text-decoration: underline; }
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 3.236rem;
+  margin-bottom: 2.1034rem;
+  font-family: Lato, "Helvetica Neue", sans-serif; }
+  .signup__logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: .5rem;
+    width: 100%; }
+  .signup__logo-img {
+    width: 7rem; }
+  .signup__title {
+    width: 100%;
+    margin: 0 0 1.5rem;
+    text-align: center;
+    color: #22606c;
+    font-size: 4rem;
+    font-weight: bold; }
+  .signup__sub-title {
+    width: 100%;
+    text-align: center;
+    color: #668ea7;
+    font-size: 1.7rem;
+    font-weight: normal;
+    margin: 0 0 1.8rem; }
+  .signup__box {
+    max-width: 40rem;
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: rgba(114, 182, 234, 0.2) 0.1rem 0 3rem;
+    border-radius: .8rem;
+    padding: 3.3rem 2.5rem; }
+  .signup__text-field {
+    display: flex;
+    border: 0.1rem solid #caeaf6;
+    padding: .5rem;
+    border-radius: .7rem;
+    position: relative; }
+    .signup__text-field + .signup__text-field {
+      margin-top: 4rem; }
+  .signup__field-label {
+    text-transform: capitalize;
+    color: rgba(39, 95, 106, 0.85);
+    background-color: white;
+    padding: 0 .8rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    top: -.9rem;
+    left: calc(0.75rem - .2rem); }
+  .signup__field-input {
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 1rem;
+    padding-right: .5rem;
+    color: rgba(32, 78, 87, 0.9);
+    height: auto;
+    border: 0;
+    box-shadow: none;
+    background-color: white;
+    margin: 0;
+    border-radius: .7rem;
+    outline: 0; }
+  .signup__sign-btn {
+    background-color: #1eda7c; }
+    .signup__sign-btn:hover {
+      background-color: #22b36a; }
+  .signup__login {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    color: #0d99df;
+    text-decoration: none;
+    cursor: pointer; }
+    .signup__login:hover {
+      text-decoration: underline; }
+
+.start-exam {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0; }
+  .start-exam__header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    align-items: center;
+    width: 100%;
+    background-color: #428bca;
+    height: 6rem;
+    margin: 0 0 2rem;
+    padding: 0 5rem;
+    border-bottom: 0.1rem blue solid; }
+  .start-exam__header-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    margin-left: 2rem; }
+  .start-exam__header-logo {
+    color: white;
+    font-size: 3rem; }
+  .start-exam__details {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 2rem;
+    width: 80%;
+    border: 0.2rem #dddddd solid;
+    border-radius: .5rem;
+    margin-top: 2rem;
+    position: relative; }
+  .start-exam__details-title {
+    margin: 0;
+    padding: 0;
+    color: #555555;
+    text-transform: uppercase;
+    position: absolute;
+    top: -1.3rem;
+    left: 2rem;
+    background-color: white;
+    font-size: 1.9rem; }
+  .start-exam__details-data {
+    text-transform: capitalize;
+    margin: 1rem 0; }
+  .start-exam__start-btn {
+    width: 20rem;
+    background-color: #57be57;
+    border-color: #398439;
+    font-size: 1.5rem;
+    font-weight: 400; }
+    .start-exam__start-btn:hover {
+      background-color: #47a447; }
+  .start-exam__footer {
+    font-size: 2rem;
+    color: #585858; }
+
+.exam-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0; }
+  .exam-page__header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    align-items: center;
+    width: 100%;
+    background-color: #428bca;
+    height: 6rem;
+    margin: 0 0 2rem;
+    padding: 0 5rem;
+    border-bottom: 0.1rem blue solid; }
+  .exam-page__header-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    margin-left: 2rem; }
+  .exam-page__header-logo {
+    color: white;
+    font-size: 3rem; }
+  .exam-page__panels {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 0rem 5rem;
+    width: 100%; }
+  .exam-page__left-panel {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 70%; }
+  .exam-page__details {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 2rem;
+    width: 100%;
+    border: 0.2rem #dddddd solid;
+    border-radius: .5rem;
+    margin-top: 2rem;
+    position: relative; }
+  .exam-page__details-title {
+    margin: 0;
+    padding: 0;
+    color: #555555;
+    text-transform: uppercase;
+    position: absolute;
+    top: -1.3rem;
+    left: 2rem;
+    background-color: white;
+    font-size: 1.9rem; }
+  .exam-page__ques-header {
+    color: #428bca;
+    background-color: whitesmoke;
+    padding: 0 1.5rem;
+    font-size: 2rem;
+    border-color: #dddddd;
+    border: 0.1rem solid #dddddd;
+    border-top-left-radius: .4rem;
+    border-top-right-radius: .4rem;
+    box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.05); }
+  .exam-page__ques-body {
+    padding: 1.5rem;
+    border: 0.1rem solid #dddddd;
+    box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.05); }
+  .exam-page__ques-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 1.2rem;
+    margin-bottom: 2.5rem;
+    background: #f9f9f9;
+    box-shadow: none;
+    border-color: #f1f1f1;
+    border: 0rem;
+    box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.2);
+    color: #333333; }
+  .exam-page__ques-answers {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap; }
+  .exam-page__ques-answer {
+    padding: 0;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    color: #333333;
+    font-size: 1.6rem;
+    font-weight: bold; }
+  .exam-page__ques-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: whitesmoke;
+    border-color: #dddddd;
+    border: 0.1rem solid #dddddd;
+    border-bottom-left-radius: .4rem;
+    border-bottom-right-radius: .4rem;
+    box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.05); }
+  .exam-page__ques-footer-left {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    width: 50%;
+    margin-left: 0; }
+  .exam-page__ques-footer-right {
+    width: 50%;
+    display: flex;
+    flex-direction: row-reverse; }
+  .exam-page__ques-nav-btn {
+    width: 50%;
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    font-weight: bold; }
+    .exam-page__ques-nav-btn#previous-btn {
+      margin-right: 0;
+      background-color: #91d3e6;
+      border-color: #0e5e77;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0; }
+      .exam-page__ques-nav-btn#previous-btn:hover {
+        background-color: #39b3d7; }
+    .exam-page__ques-nav-btn#skip-next-btn {
+      width: 40%;
+      margin-left: 0;
+      background-color: #e26763;
+      border-color: #b9231e;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0; }
+      .exam-page__ques-nav-btn#skip-next-btn:hover {
+        background-color: #d2322d; }
+    .exam-page__ques-nav-btn#save-next-btn {
+      margin-left: 0;
+      background-color: #70d470;
+      border-color: #398439; }
+      .exam-page__ques-nav-btn#save-next-btn:hover {
+        background-color: #47a447; }
+  .exam-page__right-panel {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 30%;
+    height: auto;
+    padding: 2rem; }
+  .exam-page__student-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    border: 0.2rem solid #dddddd;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    background-color: azure; }
+  .exam-page__user-logo {
+    width: 50%;
+    font-size: 6rem;
+    color: #cccccc; }
+  .exam-page__student-info-data {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 50%; }
+  .exam-page__timer-title {
+    margin: 0; }
+  .exam-page__exam-timer {
+    margin: 0; }
+  .exam-page__username {
+    font-size: 2rem;
+    font-weight: normal; }
+  .exam-page__question-panel {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    border: 0.2rem solid #dddddd;
+    border-radius: .5rem;
+    background-color: floralwhite;
+    margin-top: 1rem; }
+  .exam-page__question-panel-title {
+    font-weight: bold; }
+  .exam-page__question-panel-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%; }
+  .exam-page__question-panel-item {
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    background: #eeeeee;
+    border-radius: 100%;
+    text-decoration: none;
+    margin: .9rem;
+    border: 0.1rem solid #b9a7a7;
+    outline: 0; }
+  .exam-page__panel-current-ques {
+    border: .2rem solid blue; }
+  .exam-page__panel-visited-ques {
+    background-color: #ed143d;
+    color: white;
+    cursor: pointer; }
+  .exam-page__panel-answered-ques {
+    background-color: forestgreen;
+    color: white;
+    cursor: pointer; }
+  .exam-page__question-panel-keys {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    border: 0.2rem solid #dddddd;
+    border-radius: .5rem;
+    background-color: floralwhite;
+    margin-top: 1rem; }
+  .exam-page__question-key {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 1rem; }
+    .exam-page__question-key p {
+      margin: 0 1rem; }
+  .exam-page__visited-key {
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    background-color: #ed143d;
+    border-radius: .5rem;
+    border: 0.1rem solid #b9a7a7; }
+  .exam-page__answered-key {
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    background-color: forestgreen;
+    border-radius: .5rem;
+    border: 0.1rem solid #b9a7a7; }
+  .exam-page__not-answered-key {
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    background-color: #eeeeee;
+    border-radius: 5px;
+    border: 0.1rem solid #b9a7a7; }
+  .exam-page__current-key {
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    background-color: #eeeeee;
+    border-radius: 5px;
+    border: .2rem solid blue; }
